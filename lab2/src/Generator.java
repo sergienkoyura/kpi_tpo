@@ -24,9 +24,9 @@ public class Generator {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             int i = 0;
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null && i < Multiply.LENGTH) {
                 String[] numbers = line.split(";");
-                for (int j = 0; j < numbers.length; j++) {
+                for (int j = 0; j < Multiply.LENGTH; j++) {
                     m[i][j] = Integer.parseInt(numbers[j]);
                 }
                 i++;
@@ -34,8 +34,6 @@ public class Generator {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(filename);
-        //printMatrix(m);
         return m;
     }
 }

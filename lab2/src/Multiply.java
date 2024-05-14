@@ -1,11 +1,12 @@
 public class Multiply {
 
-    static final int LENGTH = 3000; // n
-    static final int NUM_THREADS = 16; // p - processes, q * q
+    static final int LENGTH = 500; // n
+    static final int NUM_THREADS = 4; // p - processes, q * q
     static final int q = (int) Math.sqrt(NUM_THREADS); // blocks in diagonal / row
     static final int m = LENGTH / q; // items in the block
 
     public static void main(String[] args) {
+        System.out.printf("%d items, %d threads%n", LENGTH, NUM_THREADS);
         int[][] m1 = Generator.generate("m1.txt");
         int[][] m2 = Generator.generate("m2.txt");
 
