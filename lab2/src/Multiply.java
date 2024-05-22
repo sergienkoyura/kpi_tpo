@@ -1,6 +1,6 @@
 public class Multiply {
 
-    static final int LENGTH = 500; // n
+    static final int LENGTH = 1000; // n
     static final int NUM_THREADS = 4; // p - processes, q * q
     static final int q = (int) Math.sqrt(NUM_THREADS); // blocks in diagonal / row
     static final int m = LENGTH / q; // items in the block
@@ -63,7 +63,7 @@ public class Multiply {
         for (int t = 0; t < NUM_THREADS; t++) {
             int finalT = t;
             threads[t] = new Thread(() -> {
-                // each thread work independently jumping over other threads
+                // each thread works independently jumping over other threads
                 for (int i = finalT; i < LENGTH; i += NUM_THREADS) {
                     int count = 0;
                     int j = i;

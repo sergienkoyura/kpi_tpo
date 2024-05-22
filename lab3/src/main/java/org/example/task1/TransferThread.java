@@ -1,5 +1,7 @@
 package org.example.task1;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class TransferThread extends Thread {
     private Bank bank;
     private BankAtomic bankAtomic;
@@ -22,9 +24,9 @@ public class TransferThread extends Thread {
             int amount = (int) (maxAmount * Math.random() / REPS);
 //                bank.syncMethod(fromAccount, toAccount, amount);
 //                bank.syncLock(fromAccount, toAccount, amount);
-            bank.syncBlock(fromAccount, toAccount, amount);
+//            bank.syncBlock(fromAccount, toAccount, amount);
 //                bank.syncBlockThis(fromAccount, toAccount, amount);
-//                bankAtomic.syncAtomic(fromAccount, toAccount, new AtomicInteger(amount));
+                bankAtomic.syncAtomic(fromAccount, toAccount, new AtomicInteger(amount));
         }
     }
 }

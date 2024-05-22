@@ -6,7 +6,7 @@ import java.util.concurrent.ForkJoinPool;
 public class Multiply {
 
     // 2187 - 9, 2048 - 4, 16
-    static final int LENGTH = 3000; // n
+    static final int LENGTH = 1000; // n
     static final int NUM_THREADS = 4; // p - processes, q * q
     static final int q = (int) Math.sqrt(NUM_THREADS); // blocks in diagonal / row
     static final int m = LENGTH / q; // items in the block

@@ -17,7 +17,7 @@ public class GradeBook {
         return this.students.get(student).getMark();
     }
 
-    public void add(int student, int mark) {
+    public synchronized void add(int student, int mark) {
         this.students.get(student).add(mark);
     }
 
