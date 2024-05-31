@@ -7,7 +7,6 @@ public class SMOService {
     private final int LIMIT = 10;
     private int rejections = 0;
     private int iterations = 0;
-    private Consumer[] consumers = new Consumer[LIMIT];
     private Queue<String> queue = new ArrayDeque<>(LIMIT);
 
     public synchronized String take() {
@@ -25,12 +24,10 @@ public class SMOService {
     public synchronized void put(String message) {
         iterations++;
         if (queue.size() == LIMIT) {
-//            System.out.println("Request was rejected: capacity is full!");
             rejections++;
             return;
         }
 
-//        System.out.println("Request was accepted");
         queue.add(message);
         notifyAll();
     }

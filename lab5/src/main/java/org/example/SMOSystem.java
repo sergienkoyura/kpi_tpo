@@ -26,7 +26,7 @@ public class SMOSystem {
         System.out.println("Processing time: " + TIME_LIMIT + " ms");
         System.out.println("Iterations: " + ITERATIONS);
         System.out.printf("Avg queue: %.2f%n", avgQueue / ITERATIONS);
-        System.out.printf("Avg rejections: %.2f%n", avgRejections / ITERATIONS);
+        System.out.printf("Avg rejections: %.2f%%%n", avgRejections / ITERATIONS);
 
         executorService.shutdown();
     }

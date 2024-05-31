@@ -12,7 +12,6 @@ public class Producer implements Runnable {
 
     public void run() {
         while (true){
-//            System.out.println("--------------\nSending request...\n--------------");
             SMOService.put("msg");
             try {
                 Thread.sleep(new Random().nextInt(50) + WAITING_TIME);

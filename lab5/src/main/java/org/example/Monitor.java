@@ -29,14 +29,14 @@ public class Monitor implements Callable<Values> {
                 throw new RuntimeException(e);
             }
 
-//                System.out.println("\nMonitor " + i);
+                System.out.println("\nMonitor " + i);
 
             int rejectionProbability = smoService.getRejectionProbability();
-//            System.out.println("Rejection Probability: " + rejectionProbability + '%');
+            System.out.println("Rejection Probability: " + rejectionProbability + '%');
             rejectionSum += rejectionProbability;
 
             int queueSize = smoService.getQueueSize();
-//            System.out.println("Queue size: " + queueSize);
+            System.out.println("Queue size: " + queueSize);
             queueSum += queueSize;
         }
 
